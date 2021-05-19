@@ -8,7 +8,6 @@ namespace CW_Week3
     {
         public string Material;
         public string Folding;
-        
 
     }
 }
