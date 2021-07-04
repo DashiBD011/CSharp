@@ -9,5 +9,6 @@ namespace Geometry
         public double Perimeter { get; protected set; }
         public double Area { get; protected set; }
 
+
     }
 }

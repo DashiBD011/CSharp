@@ -20,14 +20,12 @@ namespace Geometry
         public double CalcArea()
         {
             double p = CalcPerimeter() / 2; 
-            Area = Math.Sqrt(p * (p - _A) * (p - _B) * (p - _C));
-            return Area;
+            return Math.Sqrt(p * (p - _A) * (p - _B) * (p - _C));
         }
 
         public double CalcPerimeter()
         {
             return _A + _B + _C;
-            
         }
     }
 }

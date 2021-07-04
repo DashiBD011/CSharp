@@ -18,6 +18,7 @@ namespace Geometry
             Perimeter = 2 * PI * _radius;
             return Perimeter;
         }
+
         public double CalcArea()
         {
             Area = PI * _radius * _radius;

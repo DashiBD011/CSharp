@@ -15,6 +15,7 @@ namespace Geometry
             Area = _side * _side;
             return Area;
         }
+
         public double CalcPerimeter()
         {
             Perimeter = _side * 4;
