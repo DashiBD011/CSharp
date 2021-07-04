@@ -6,6 +6,6 @@ namespace Hospital
 {
     interface IConsultation
     {
-        public void consultation();
+        public string consultation(Patient patient, Doctor doctor);
     }
 }

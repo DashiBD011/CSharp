@@ -4,8 +4,8 @@ using System.Text;
 
 namespace Hospital
 {
-    public interface IEmergency
+    public class Doctor : Person
     {
-        public string emergency();
+
     }
 }

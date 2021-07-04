@@ -4,20 +4,30 @@ using System.Text;
 
 namespace Geometry
 {
-    public class Triangle
+    public class Triangle:AFigure, IFigure
     {
-        public int A;
-        public int B;
-        public int C;
+        private readonly double _A;
+        private readonly double _B;
+        private readonly double _C;
 
-        public Triangle(int A, int B, int C)
+        public Triangle(double A, double B, double C)
         {
-            this.A = A;
-            this.B = B;
-            this.C = C;
+            _A = A;
+            _B = B;
+            _C = C;
         }
-       
 
-      
+        public double CalcArea()
+        {
+            double p = CalcPerimeter() / 2; 
+            Area = Math.Sqrt(p * (p - _A) * (p - _B) * (p - _C));
+            return Area;
+        }
+
+        public double CalcPerimeter()
+        {
+            return _A + _B + _C;
+            
+        }
     }
 }

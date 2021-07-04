@@ -4,18 +4,11 @@ using System.Text;
 
 namespace Hospital
 {
-    class Person
+    public class Person
     {
-        public string _last_name;
-        public string _first_name;
-        private int _age;
+        public string Last_name { get; set; }
+        public string First_name { get; set; }
+        private int Age { get; set; }
 
-        public Person(string last_name, string first_name, int age)
-        {
-            _last_name = last_name;
-            _first_name = first_name;
-            _age = age;
-        }
-        
     }
 }

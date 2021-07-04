@@ -9,9 +9,10 @@ namespace Hw_Week_2
         Type1, Type2, Type3
     }
 
-    class Chair:Furniture
+    public class Chair:SoftFurniture
     {
-        public TypeChair Type { get; set; }
+        private TypeChair Type { get; set; }
+
 
     }
 }

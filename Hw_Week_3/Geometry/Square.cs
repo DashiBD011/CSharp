@@ -6,20 +6,19 @@ namespace Geometry
 {
     public class Square : AFigure, IFigure
     {
-        public double _side;
-       
-        public Square(double side) => _side = side;
-        
+        private readonly double _side;
 
-        public double CalcPerimeter()
-        {
-            Perimeter = 4 * _side;
-            return Perimeter;
-        }
+        public Square(double side) => _side = side;
+
         public double CalcArea()
         {
             Area = _side * _side;
             return Area;
+        }
+        public double CalcPerimeter()
+        {
+            Perimeter = _side * 4;
+            return Perimeter;
         }
     }
 }
