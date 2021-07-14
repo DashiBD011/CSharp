@@ -6,54 +6,35 @@ using static System.Delegate;
 
 namespace Tic_Tac_Toe
 {
-    public delegate void Print(string smth);
-    public delegate void PrintPlayer(char player);
+ 
     class Board:Game
     {
-		public Print print;
-		public PrintPlayer PrintP;
-
+		
+		public Board()
+        {
+			
+        }
         public override void PrintField(char[] Field, char player)
         {
 			Console.Clear();
-			int counter = 0;
-			print("\t\t\t\t\t\t╔");
-			//Console.Write("╔");
-			for (int i = 0; i < 9; i++)
+			Console.Write("\n\n\n\n\n\n\n\n");
+			for (int i = 6; i >= 0; i -= 3)
 			{
-				print("═");
-			}
-			print("╗\n");
-			print("\t\t\t\t\t\t");
-			print("║");
-			for (int i = 0; i < 9; i++)
-			{
-				if (Field[i] == 1)
+				Console.Write("\t\t\t\t\t\t ");
+
+				for (int j = 0; j < 3; j++)
 				{
-					PrintP(player);
+					Console.Write($" {Field[i + j]}");
+					if (j != 2) Console.Write(" | ");
 				}
-				
-				counter++;
-				if (counter == 3 || counter == 6)
-				{
-					print("║");
-					print("\t\t\t\t\t\t\n");
-					print("\t\t\t\t\t\t\n");
-					print("║");
-				}
-				if (counter == 9)
-				{
-					print("║\n");
-				}
+				Console.WriteLine();
+
+				Console.Write("\t\t\t\t\t\t ");
+				if (i != 0) Console.Write("--- --- ---");
+				Console.WriteLine();
+
 			}
-			print("\t\t\t\t\t\t");
-			print("╚");
-			for (int i = 0; i < 9; i++)
-			{
-				print("═");
-			}
-			print("╝\n");
-			Check(Field,player);
+			
 		}
 	}
     

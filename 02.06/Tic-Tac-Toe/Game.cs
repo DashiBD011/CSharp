@@ -6,24 +6,34 @@ using static System.Console;
 
 namespace Tic_Tac_Toe
 {
-    public delegate string Message(string msg);
-    public delegate string ReadLine();
 
     public class Game
     {
 
 
-        const char X = 'X';
-        const char O = 'O';
-
-        protected char player = X;
+       
+        protected char player;
         int turn;
 
         protected char[] Field = new char[9];
+        public Game()
+        {
 
-        public Message Info;
-        public Message Error;
+        }
+        public void Start()
+        {
+            ConsoleKeyInfo cki;
 
+            
+            Board board = new Board();
+            do
+            {
+                cki = Console.ReadKey(true);
+                board.PrintField(Field, player);
+                Move(Field, player);
+                Check(Field, player);
+            } while (cki.Key != ConsoleKey.Escape);
+        }
         public void Move(char[] Field, char player)
         {
             bool busy;
@@ -31,28 +41,24 @@ namespace Tic_Tac_Toe
             do
             {
                 busy = false;
-                Info("Введите число от 1-9");
+                Console.WriteLine("Введите число от 1 до 9");
                 turn = Int32.Parse(ReadLine());
-                do
+                if (turn < 1 || turn > 9)
                 {
-                    if (turn < 1 || turn > 9)
-                    {
-                        Error("Неправильный ход");
-                    }
+                    Console.WriteLine("Неправильный ход");
+                }
 
-                } while (turn < 1 || turn > 9);
 
                 if (Field[turn - 1] != 0)
                 {
                     busy = true;
-                    Error("Клетка уже занята");
+                    Console.WriteLine("Клетка уже занята");
                 }
                 else Field[turn - 1] = player;
 
 
 
             } while (busy);
-            PrintField(Field, player);
 
         }
         public void Check(char[] Field, char player)
@@ -78,31 +84,31 @@ namespace Tic_Tac_Toe
             }
             if (!game_over && drawn_game)
             {
-                Info("Ничья!");
+                Console.WriteLine("Ничья!");
             }
 
             if (game_over)
             {
-                Info($"{player} wins");
+                Console.WriteLine($"{player} wins");
+                return;
             }
             else
             {
-                if (player == X)
+                if (player == 'X')
                 {
-                    player = O;
+                    player = '0';
                 }
 
                 else
                 {
-                    player = X;
+                    player = 'X';
                 }
-                Move(Field, player);
             }
 
         }
 
         public virtual void PrintField(char[] Field, char player)
-        { 
+        {
 
         }
 
