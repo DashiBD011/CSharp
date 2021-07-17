@@ -9,13 +9,10 @@ namespace Tic_Tac_Toe
 
     public class Game
     {
-
-
-       
-        protected char player;
-        int turn;
-
         protected char[] Field = new char[9];
+        protected char player;
+        private int turn;
+
         public Game()
         {
 
@@ -23,15 +20,17 @@ namespace Tic_Tac_Toe
         public void Start()
         {
             ConsoleKeyInfo cki;
-
-            
+            int count = 0;
             Board board = new Board();
+            cki = Console.ReadKey(true);
             do
             {
-                cki = Console.ReadKey(true);
+                if (count % 2 == 0) player = 'X';
+                else player = 'O';
                 board.PrintField(Field, player);
                 Move(Field, player);
                 Check(Field, player);
+                count++;
             } while (cki.Key != ConsoleKey.Escape);
         }
         public void Move(char[] Field, char player)
@@ -107,10 +106,7 @@ namespace Tic_Tac_Toe
 
         }
 
-        public virtual void PrintField(char[] Field, char player)
-        {
-
-        }
+       
 
     }
 }

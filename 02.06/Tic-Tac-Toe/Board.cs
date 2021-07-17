@@ -7,14 +7,14 @@ using static System.Delegate;
 namespace Tic_Tac_Toe
 {
  
-    class Board:Game
+    class Board
     {
 		
 		public Board()
         {
 			
         }
-        public override void PrintField(char[] Field, char player)
+        public void PrintField(char[] Field, char player)
         {
 			Console.Clear();
 			Console.Write("\n\n\n\n\n\n\n\n");
