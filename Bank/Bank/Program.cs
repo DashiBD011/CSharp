@@ -26,7 +26,7 @@ namespace Bank
             Account acc = new Account(LName, FName, Age);
             Console.Clear();
             Console.WriteLine("Аккаунт создан!");
-            acc.
+            
 
 
         }
