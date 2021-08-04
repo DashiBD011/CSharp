@@ -7,7 +7,12 @@ namespace Hw_Week_2
     public class Sofa:SoftFurniture
     {
         public int AmountPeople { get; set; }
+
         public Sofa(int AmountPeople = 0 ):base(filler:null,upholstery:null,is_folding:false)
+        {
+            this.AmountPeople = AmountPeople;
+        }
+        public Sofa(int AmountPeople, string filler, string upholstery, bool is_folding) : base(filler, upholstery, is_folding)
         {
             this.AmountPeople = AmountPeople;
         }
@@ -18,11 +23,11 @@ namespace Hw_Week_2
 
         public new string AllInfo()
         {
-            return base.Info() + $"\nКоличество мест: {AmountPeople}";
+            return base.AllInfo() + $"\nКоличество мест: {AmountPeople}";
         }
         public new string Info()
         {
-            return $"\nКоличество мест: {AmountPeople}";
+            return $"Количество мест: {AmountPeople}";
         }
 
     }

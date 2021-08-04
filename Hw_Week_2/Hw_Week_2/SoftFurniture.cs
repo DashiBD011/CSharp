@@ -7,9 +7,9 @@ namespace Hw_Week_2
 
     public class SoftFurniture : Furniture
     {
-        private string Filler { get; set; }
-        private string Upholstery { get; set; }
-        private bool is_folding { get; set; }
+        private string Filler { get; set; }      // Наполнитель
+        private string Upholstery { get; set; }  // Обивка
+        private bool is_folding { get; set; }    
 
         public SoftFurniture(string filler = null, string upholstery = null, bool is_folding = false) : base(Height: 0, Width: 0, Manufacturer: null)
         {
