@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bank", "Bank\Bank.csproj", "{32E48E55-4BEC-4016-953F-1DE6D65CF83E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stream", "Stream\Stream.csproj", "{75C91563-50BD-4796-872E-168342C7C76C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stream", "Stream\Stream.csproj", "{75C91563-50BD-4796-872E-168342C7C76C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialization", "Serialization\Serialization.csproj", "{808003C0-9C55-4EC6-A305-32D93F2ADA03}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{75C91563-50BD-4796-872E-168342C7C76C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75C91563-50BD-4796-872E-168342C7C76C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75C91563-50BD-4796-872E-168342C7C76C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{808003C0-9C55-4EC6-A305-32D93F2ADA03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{808003C0-9C55-4EC6-A305-32D93F2ADA03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{808003C0-9C55-4EC6-A305-32D93F2ADA03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{808003C0-9C55-4EC6-A305-32D93F2ADA03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

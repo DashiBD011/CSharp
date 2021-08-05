@@ -1,37 +1,26 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 
 namespace Stream
 {
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
-            var disks = DriveInfo.GetDrives();
-            foreach (var disk in disks)
+            Console.OutputEncoding = Encoding.UTF8;
+            using (var sw = new StreamWriter("test.txt",true,Encoding.UTF8))
             {
-                Console.WriteLine($"Disk name : {disk.Name}");
-                Console.WriteLine($"Volume label : {disk.VolumeLabel}");
-                Console.WriteLine($"Type : {disk.DriveType}");
-                Console.WriteLine($"Format : {disk.DriveFormat}");
-                Console.WriteLine($"Total size : {disk.TotalSize}");
-                var rootPath = disk.RootDirectory.ToString();
-                var files = Directory.GetFiles(rootPath);
-                foreach (var file in files)
-                {
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine($"Type : {file.GetType()}");
-                    Console.WriteLine(file);
-                    Console.ResetColor();
-                }
-                var dirs = Directory.GetDirectories(rootPath);
-                foreach (var dir in dirs)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine($"Type : {dir.GetType()}");
-                    Console.WriteLine(dir);
-                }
+                sw.Write("Hello, World!");
+                sw.WriteLine("Hello, user!");
+                sw.WriteLine("Привет, Мир!");
             }
+            using (var sr = new StreamReader("test.txt", Encoding.UTF8))
+            {
+                var text = sr.ReadToEnd();
+                Console.WriteLine(text);
+            }
+            Console.ReadLine();
         }
        
     }
