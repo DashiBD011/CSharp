@@ -5,7 +5,7 @@ using System.Text;
 namespace Bank
 {
     public delegate void Message(string message);
-    public delegate string Readline(string message);
+    public delegate string Readline();
     
     
 }
